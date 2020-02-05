@@ -6,12 +6,12 @@ FROM centos:7.2.1511
 MAINTAINER lars.juhl.jensen@gmail.com
 
 # install base dependencies
-RUN yum -y install hg swig gcc gcc-c++ make python-devel boost boost-devel
+RUN yum -y install git swig gcc gcc-c++ make python-devel boost boost-devel
 
 WORKDIR /app
 
 # clone and build tagger
-RUN hg clone https://hg@bitbucket.org/larsjuhljensen/tagger \
+RUN git clone https://github.com/larsjuhljensen/tagger.git \
     && cd tagger \
     && make
 
